@@ -12,6 +12,8 @@ class WelcomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_welcome)
+
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -33,7 +35,7 @@ class WelcomeActivity : AppCompatActivity() {
     }
 
     private fun welcomeToast() {
-
-        Toast.makeText(baseContext,"Welcome page",Toast.LENGTH_LONG).show()
+        val receive_extra_name= intent.getStringExtra(MainActivity().NAME_MAINACTIVITY)!!
+        Toast.makeText(baseContext,"Welcome :$receive_extra_name ",Toast.LENGTH_LONG).show()
     }
 }

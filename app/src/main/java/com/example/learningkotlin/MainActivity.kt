@@ -8,7 +8,7 @@ import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
-
+   val NAME_MAINACTIVITY = "name_mainActivity"
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -20,6 +20,9 @@ class MainActivity : AppCompatActivity() {
                 val name=editText_name.text.toString()
                 Toast.makeText(baseContext,"Welcome and well done $name",Toast.LENGTH_LONG).show()
                val intentWelcomeActivity= Intent(this,WelcomeActivity::class.java)
+                // updating Intent to share name value
+
+                intentWelcomeActivity.putExtra(NAME_MAINACTIVITY,name)
                 startActivity(intentWelcomeActivity)
             }
             else
